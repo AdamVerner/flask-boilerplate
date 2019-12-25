@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>File Not Found</h1>
+    <p>If you think your request was valid please contact the administrator</p>
+    <p><a href="{{ url_for('main.index') }}">Back</a></p>
+
+{% endblock %}
+
+{% block titleExt %} - Not Found{% endblock %}

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title{% block titleExt %}{% endblock %}</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+  {% block head %}
+  {% endblock %}
+
+</head>
+<body>
+
+  <nav>
+    <ul style="display: inline-block">
+      {% if current_user.is_anonymous %}
+        <li class="main-menu-item">
+          <a class="{%  if request.endpoint == 'auth.login' %}active{% endif %}" href="{{url_for('auth.login')}}">
+            Login
+          </a>
+        </li>
+        <li class="main-menu-item">
+          <a class="{%  if request.endpoint == 'auth.register' %}active{% endif %}" href="{{url_for('auth.register')}}">
+            Register
+          </a>
+        </li>
+      {% else %}
+        <li class="main-menu-item">
+          <a class="{%  if request.endpoint == 'auth.login' %}active{% endif %}" href="{{url_for('auth.logout')}}">
+            Logout
+          </a>
+        </li>
+      {% endif %}
+
+      {% for item in nav.top %}
+        <li class="main-menu-item">
+          <a class="{{ 'active' if item.is_active else '' }}" href="{{ item.url }}">
+            {{item.label}}
+          </a>
+        </li>
+      {% endfor %}
+    </ul>
+  </nav>
+
+  {% with messages = get_flashed_messages() %}
+    {% if messages %}
+      <ul>
+        {% for message in messages %}
+          <li>{{ message }}</li>
+        {% endfor %}
+      </ul>
+    {% endif %}
+  {% endwith %}
+
+  {% block content %}
+  {% endblock %}
+
+</body>
+</html>

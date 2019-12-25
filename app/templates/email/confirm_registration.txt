@@ -1,0 +1,9 @@
+Dear User,
+
+Thank you for registering to our Application, please verify your registration
+
+{{ url_for('auth.confirm_registration', token=token, _external=True) }}
+
+If you have not registered please ignore this message.
+Sincerely,
+Application team

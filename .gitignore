@@ -1,0 +1,11 @@
+# Project exclude paths
+__pycache__/
+/venv/
+.idea/
+logs/
+migrations/
+
+app.db
+*.py[cod]
+*$py.class
+.flaskenv

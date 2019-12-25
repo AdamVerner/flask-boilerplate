@@ -1,0 +1,17 @@
+Flask
+Flask-DotEnv
+Flask-httpauth
+Flask-Login
+Flask-Mail
+flask-marshmallow
+Flask-Migrate
+Flask-Navigation
+Flask-SQLAlchemy
+Flask-WTF
+gunicorn
+pyjwt
+pymysql
+python-dotenv
+schema
+Werkzeug
+wtforms

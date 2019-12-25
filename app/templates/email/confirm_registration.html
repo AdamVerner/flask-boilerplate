@@ -1,0 +1,13 @@
+<p>Dear user,</p>
+<p>
+    Thank you for registering to our Application, please verify your registration
+
+    <a href="{{ url_for('auth.confirm_registration', token=token, _external=True) }}">
+        click here
+    </a>.
+</p>
+<p>Alternatively, you can copy-paste the following link in your browser</p>
+<p>{{ url_for('auth.confirm_registration', token=token, _external=True) }}</p>
+<p>If you have not registered please ignore this message.</p>
+<p>Sincerely,</p>
+<p>Application team</p>
